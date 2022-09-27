@@ -1,0 +1,40 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    meta.helm.sh/release-name: devtron
+    meta.helm.sh/release-namespace: devtroncd
+  creationTimestamp: "2022-09-24T23:56:37Z"
+  labels:
+    app: devtron
+    app.kubernetes.io/managed-by: Helm
+    release: devtron
+  name: devtron-service
+  namespace: devtroncd
+  resourceVersion: "19934"
+  uid: a1642ff4-3385-4e4e-91f1-9dcdb9c86e15
+spec:
+  clusterIP: 10.43.129.18
+  clusterIPs:
+  - 10.43.129.18
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: devtron
+    nodePort: 30523
+    port: 80
+    protocol: TCP
+    targetPort: devtron
+  selector:
+    app: devtron
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
